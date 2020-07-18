@@ -21,17 +21,13 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: "password is required",
   },
-  mobile: {
+  expertise: {
     type: String,
     trim: true,
-    // required: "Mobile number is required",
   },
   profession: {
     type: String,
     trim: true,
-  },
-  intention:{
-    type: String,
   },
   userCreated: {
     type: Date,
@@ -39,7 +35,7 @@ const UserSchema = new mongoose.Schema({
   },
   likes: { type: Array },
   dislikes: { type: Array },
-  zipCode: { type: Number, trim: true },
+  zip: { type: Number, trim: true },
   orgsCreated: [{ type: mongoose.Schema.ObjectId, ref: "Created" }],
 });
 module.exports = mongoose.model("User", UserSchema);

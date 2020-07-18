@@ -10,12 +10,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.post("/create-org", 
-passport.authenticate("jwt-user", { session: false }),
+// passport.authenticate("jwt-user", { session: false }),
 organizationController.createOrganization);
 
-router.get('/all-orgs',
-passport.authenticate("jwt-user", { session: false }),
-organizationController.getAllOrganizations)
+// router.get('/all-orgs',
+// passport.authenticate("jwt-user", { session: false }),
+// organizationController.getAllOrganizations)
 
 
 module.exports = router;

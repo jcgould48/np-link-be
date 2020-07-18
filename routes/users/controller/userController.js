@@ -11,7 +11,9 @@ module.exports= {
             email: req.body.email,
             password: req.body.password,
             username: req.body.username,
-            // mobile: req.body.mobile,
+            expertise: req.body.expertise,
+            profession: req.body.profession,
+            zip: req.body.zip,
           });
           let genSalt = await bcrypt.genSalt(12);
           let hashedPassword = await bcrypt.hash(createdUser.password, genSalt);
