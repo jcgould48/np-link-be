@@ -6,6 +6,10 @@ const ItemSchema = new mongoose.Schema({
     type: String,
     required: "Item name is required",
   },
+  poc: {
+    type: String,
+    required: "Item name is required",
+  },
   email: {
     type: String,
     trim: true,
@@ -13,7 +17,7 @@ const ItemSchema = new mongoose.Schema({
     match: [/.+\@.+\..+/, "Please enter a valid email address"],
     required: "Email is required",
   },
-  
+  city: { type: String, trim: true },
   pitch: {
     type: String,
     // required: "Description is required",
@@ -29,7 +33,10 @@ const ItemSchema = new mongoose.Schema({
     type: Date,
     default: new Date(),
   },
- 
+  approved: {
+    type: Boolean,
+    
+  },
   helpNeeded:{ type: Array, default: [] },
   hashTags: { type: Array, default: [] },
   createdBy: { type: mongoose.Schema.ObjectId, ref: "User" },

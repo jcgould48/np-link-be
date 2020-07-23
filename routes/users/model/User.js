@@ -4,11 +4,15 @@ const now = moment();
 
 
 const UserSchema = new mongoose.Schema({
-  username: {
+  firstName: {
     type: String,
     trim: true,
-    required: "username is required",
-    unique: "Username already exists",
+    required: "First name is required",
+  },
+  lastName: {
+    type: String,
+    trim: true,
+    required: "Last Name is required",
   },
   email: {
     type: String,
@@ -33,9 +37,9 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: new Date(),
   },
-  likes: { type: Array },
-  dislikes: { type: Array },
-  zip: { type: Number, trim: true },
+  city: { type: String, trim: true },
+  likes: [],
+  dislikes: [{ type: mongoose.Schema.ObjectId, ref: "Dislinkes" }],
   orgsCreated: [{ type: mongoose.Schema.ObjectId, ref: "Created" }],
 });
 module.exports = mongoose.model("User", UserSchema);
