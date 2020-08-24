@@ -75,6 +75,7 @@ module.exports= {
         }).catch(err=> reject(err))
       },
       logout: (req, res) => {
+        console.log("be log out")
         res.clearCookie("jwt-cookie-expense");
         res.clearCookie("jwt-cookie-refresh-expense");
         res.end();
