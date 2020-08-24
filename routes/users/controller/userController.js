@@ -73,6 +73,10 @@ module.exports= {
           })
           .catch(err=> reject(err))
         }).catch(err=> reject(err))
-      }
-      
+      },
+      logout: (req, res) => {
+        res.clearCookie("jwt-cookie-expense");
+        res.clearCookie("jwt-cookie-refresh-expense");
+        res.end();
+      },
     }

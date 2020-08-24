@@ -8,6 +8,7 @@ router.get('/', function(req, res, next) {
 
 router.post("/sign-up", userController.signUp);
 router.post("/login", userController.login);
+router.get("/logout", userController.logout);
 
 router.put('/update-profile', userController.updateProfile)
 router.get('/update-profile', userController.updateProfile)
